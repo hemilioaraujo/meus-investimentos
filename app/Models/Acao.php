@@ -16,6 +16,8 @@ class Acao extends Model
 
     protected $fillable = ['setor', 'ativo_renda_variavel_id'];
 
+    protected $with = ['ativo'];
+
     public function ativo(): BelongsTo
     {
         return $this->belongsTo(AtivoRendaVariavel::class, 'ativo_renda_variavel_id');

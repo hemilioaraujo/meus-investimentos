@@ -16,6 +16,8 @@ class Fii extends Model
 
     protected $fillable = ['tipo', 'ativo_renda_variavel_id'];
 
+    protected $with = ['ativo'];
+
     public function ativo(): BelongsTo
     {
         return $this->belongsTo(AtivoRendaVariavel::class, 'ativo_renda_variavel_id');
